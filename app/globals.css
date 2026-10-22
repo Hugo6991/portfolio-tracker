@@ -1,0 +1,198 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-brand: hsl(var(--brand));
+  --color-brand-foreground: hsl(var(--brand-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-destructive: hsl(var(--destructive));
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
+
+  --shadow-card:
+    0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-glow:
+    0 1px 2px -1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-overlay: 0 16px 40px rgba(0, 0, 0, 0.14);
+
+  --radius-card: 0.875rem;
+}
+
+/*
+  Spacing system (2026-10-18, from the Filipiuk spacing breakdown in
+  ~/Downloads/AI/Agent/motion-study/2026-10-18-spacing-filipiuk/):
+  sidebar 248, page padding 40, section gap 48, card gap 12, card padding 24.
+  Outer spacing is large, spacing inside a group is small, so groups read as groups.
+  Every page and card uses these; do not hand-pick padding or gaps in components.
+*/
+@layer components {
+  .page-main { padding: 28px 16px 40px; }
+  .page-stack { display: flex; flex-direction: column; gap: 32px; }
+  .card-grid { gap: 12px; }
+  @media (min-width: 640px) {
+    .page-main { padding: 32px 24px 48px; }
+  }
+  @media (min-width: 1024px) {
+    .page-main { padding: 40px; }
+    .page-stack { gap: 48px; }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
+    --border: 0 0% 90%;
+    --input: 0 0% 58%;
+    --ring: 0 0% 9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --brand: 176 68% 38%;
+    --brand-foreground: 0 0% 100%;
+    --destructive: 0 72% 48%;
+    --sidebar: 0 0% 98%;
+    --sidebar-foreground: 0 0% 9%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 64%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+    --border: 0 0% 18%;
+    --input: 0 0% 46%;
+    --ring: 0 0% 83%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --brand: 168 64% 55%;
+    --brand-foreground: 0 0% 4%;
+    --destructive: 0 63% 55%;
+    --sidebar: 0 0% 7%;
+    --sidebar-foreground: 0 0% 92%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    font-feature-settings: "tnum";
+  }
+
+  ::selection {
+    background: hsl(var(--brand) / 0.2);
+  }
+}
+
+.terminal-surface {
+  background: hsl(var(--background));
+}
+
+.mono-dots {
+  letter-spacing: 0.18em;
+}
+
+@keyframes mobile-navigation-in {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes mobile-navigation-out {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes mobile-navigation-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes mobile-navigation-overlay-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mobile-navigation[data-state="open"] {
+    animation: mobile-navigation-in 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .mobile-navigation[data-state="closed"] {
+    animation: mobile-navigation-out 160ms ease-in;
+  }
+
+  .mobile-navigation-overlay[data-state="open"] {
+    animation: mobile-navigation-overlay-in 220ms ease-out;
+  }
+
+  .mobile-navigation-overlay[data-state="closed"] {
+    animation: mobile-navigation-overlay-out 160ms ease-in;
+  }
+}
+
+@keyframes donut-sector-grow {
+  from { transform: scale(0.97); }
+  to { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .donut-active-sector {
+    animation: donut-sector-grow 180ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}

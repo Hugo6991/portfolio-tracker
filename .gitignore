@@ -1,0 +1,19 @@
+.next
+node_modules
+.pnpm-store
+.env
+.env*.local
+npm-debug.log*
+*.tsbuildinfo
+.DS_Store
+.vercel
+/supabase/.temp/
+
+# Never commit real financial exports. data/*.json in this repository is synthetic demo data.
+/private-data/
+/data/*.csv
+/data/*.tsv
+/data/*.zip
+/data/*.xls
+/data/*.xlsx
+/data/*.pdf

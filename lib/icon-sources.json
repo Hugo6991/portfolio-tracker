@@ -1,0 +1,22 @@
+{
+  "assets": {
+    "AAVE": "https://raw.githubusercontent.com/0xa3k5/web3icons/3fa8ef5e17a1a213058a047e862499f00fc0dc81/raw-svgs/tokens/branded/AAVE.svg",
+    "ARB": "https://raw.githubusercontent.com/0xa3k5/web3icons/3fa8ef5e17a1a213058a047e862499f00fc0dc81/raw-svgs/networks/branded/arbitrum-one.svg",
+    "AVAX": "https://raw.githubusercontent.com/0xa3k5/web3icons/3fa8ef5e17a1a213058a047e862499f00fc0dc81/raw-svgs/tokens/branded/AVAX.svg",
+    "CAKE": "https://raw.githubusercontent.com/0xa3k5/web3icons/3fa8ef5e17a1a213058a047e862499f00fc0dc81/raw-svgs/tokens/branded/CAKE.svg",
+    "DAI": "https://raw.githubusercontent.com/0xa3k5/web3icons/3fa8ef5e17a1a213058a047e862499f00fc0dc81/raw-svgs/tokens/branded/DAI.svg",
+    "GMX": "https://raw.githubusercontent.com/0xa3k5/web3icons/3fa8ef5e17a1a213058a047e862499f00fc0dc81/raw-svgs/tokens/branded/GMX.svg",
+    "GT": "https://raw.githubusercontent.com/0xa3k5/web3icons/3fa8ef5e17a1a213058a047e862499f00fc0dc81/raw-svgs/tokens/branded/GT.svg",
+    "LINK": "https://raw.githubusercontent.com/0xa3k5/web3icons/3fa8ef5e17a1a213058a047e862499f00fc0dc81/raw-svgs/tokens/branded/LINK.svg",
+    "OP": "https://raw.githubusercontent.com/0xa3k5/web3icons/3fa8ef5e17a1a213058a047e862499f00fc0dc81/raw-svgs/tokens/branded/OP.svg",
+    "POL": "https://raw.githubusercontent.com/0xa3k5/web3icons/3fa8ef5e17a1a213058a047e862499f00fc0dc81/raw-svgs/tokens/branded/POL.svg",
+    "SOL": "https://raw.githubusercontent.com/0xa3k5/web3icons/3fa8ef5e17a1a213058a047e862499f00fc0dc81/raw-svgs/tokens/branded/SOL.svg",
+    "SUI": "https://raw.githubusercontent.com/0xa3k5/web3icons/3fa8ef5e17a1a213058a047e862499f00fc0dc81/raw-svgs/tokens/branded/SUI.svg",
+    "UNI": "https://raw.githubusercontent.com/0xa3k5/web3icons/3fa8ef5e17a1a213058a047e862499f00fc0dc81/raw-svgs/tokens/branded/UNI.svg"
+  },
+  "sources": {
+    "gate": "https://raw.githubusercontent.com/0xa3k5/web3icons/3fa8ef5e17a1a213058a047e862499f00fc0dc81/raw-svgs/exchanges/branded/gate-io.svg",
+    "debank": "https://debank.com/192.png",
+    "htx": "https://www.htx.com/pwa/icon-pwa-180.png"
+  }
+}

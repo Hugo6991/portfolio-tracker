@@ -1,0 +1,80 @@
+{
+  "name": "portfolio-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@11.16.0",
+  "engines": {
+    "node": ">=24 <25",
+    "npm": ">=11.16 <12"
+  },
+  "scripts": {
+    "navigation:verify": "node scripts/verify-navigation.mjs",
+    "icons:sync": "node scripts/sync-brand-icons.mjs",
+    "icons:verify": "node --import tsx scripts/verify-brand-icons.mjs",
+    "dev": "next dev",
+    "dev:preview": "next build && next start -H 127.0.0.1 -p 3001",
+    "expense:reconcile": "node --import tsx scripts/expense-reconcile.ts",
+    "expense:refresh": "node --import tsx scripts/expense-refresh.ts",
+    "wallet:refresh": "node --import tsx scripts/wallet-refresh.ts",
+    "supabase:migration:new": "supabase migration new",
+    "supabase:migration:list": "supabase migration list --linked",
+    "supabase:push:dry-run": "supabase db push --linked --dry-run",
+    "build": "next build",
+    "start": "next start",
+    "lint": "biome lint . --diagnostic-level=error",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.18",
+    "@radix-ui/react-scroll-area": "^1.2.13",
+    "@radix-ui/react-separator": "^1.1.11",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tabs": "^1.1.16",
+    "@radix-ui/react-toggle-group": "^1.1.14",
+    "@radix-ui/react-tooltip": "^1.2.11",
+    "@tanstack/react-table": "^8.21.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.18.2",
+    "jose": "6.2.12",
+    "lucide-react": "^0.468.0",
+    "next": "^15.5.21",
+    "next-themes": "^0.4.4",
+    "papaparse": "^5.5.4",
+    "pdfjs-dist": "^4.10.38",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.15.4",
+    "server-only": "0.0.1",
+    "sonner": "^1.7.4",
+    "swr": "^2.5.1",
+    "tailwind-merge": "^2.6.0",
+    "tesseract.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@electric-sql/pglite": "^0.5.8",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "^24.19.1",
+    "@types/papaparse": "^5.5.2",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "exceljs": "^4.4.0",
+    "playwright": "1.63.0",
+    "postcss": "^8.5.6",
+    "sharp": "0.35.5",
+    "supabase": "2.119.0",
+    "tailwindcss": "4.3.3",
+    "tsx": "^4.23.13",
+    "typescript": "^5.8.3",
+    "vitest": "5.0.3"
+  },
+  "overrides": {
+    "next": {
+      "postcss": "8.5.28"
+    },
+    "exceljs": {
+      "uuid": "11.1.1"
+    }
+  }
+}
